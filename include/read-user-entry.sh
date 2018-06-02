@@ -6,5 +6,5 @@ readParameters() {
     fi
 
     LXD_NAME="$1"
-    LXD_HOST="${LXD_NAME}.lxd"
+    LXD_HOST="$LXD_NAME.lxd"
 }
