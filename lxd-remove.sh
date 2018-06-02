@@ -14,23 +14,9 @@ fi
 
 LXD_IP=`sudo lxc list $LXD_NAME --format csv -c 4 | cut -d' ' -f1`
 
-showMessage "Clean knowhosts file"
-ssh-keygen -R "$LXD_HOST" > /dev/null
-ssh-keygen -R "$LXD_IP"   > /dev/null
+source $INCLUDE_DIR/remove/clean-knowhosts.sh
+source $INCLUDE_DIR/remove/clean-etc-hosts.sh
+source $INCLUDE_DIR/remove/delete-container.sh
+source $INCLUDE_DIR/remove/test.sh
 
-showMessage "Clean /etc/hosts file"
-sudo sed -i "/$LXD_HOST/d" /etc/hosts
-sudo sed -i "/$LXD_IP/d" /etc/hosts
-
-showMessage "Stop Container"
-sudo lxc exec $LXD_NAME -- shutdown -h now
-sleep 1
-
-showMessage "Delete Container"
-sudo lxc delete $LXD_NAME
-
-showMessage "Container List"
-sudo lxc list
-
-showMessage "Finished"
-
+showWarning "Finished"
