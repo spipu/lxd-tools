@@ -14,4 +14,9 @@ readParameters() {
     if [ ! "$LXD_HOST" ] ; then
         LXD_HOST="$LXD_NAME.lxd"
     fi
+
+    LXD_DELIVERY_USER=$(grep "^delivery-user=" "$FILENAME_TEMPLATE" | cut -d= -f2- | head -1)
+    if [ ! "$LXD_DELIVERY_USER" ] ; then
+        LXD_DELIVERY_USER="delivery"
+    fi
 }

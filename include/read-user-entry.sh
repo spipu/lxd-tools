@@ -7,4 +7,5 @@ readParameters() {
 
     LXD_NAME="$1"
     LXD_HOST="$LXD_NAME.lxd"
+    LXD_DELIVERY_USER="delivery"
 }
