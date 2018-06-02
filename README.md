@@ -5,7 +5,7 @@
 in first, launch the init script:
 
 ```bash
-sudo ./lxd-init.sh
+sudo ./install.sh
 ```
 
 then you can :
@@ -53,4 +53,3 @@ lxc image export test
 
 lxc image import 0bf450c17cb7034077c83487e0.tar.gz
 lxc image list
-
