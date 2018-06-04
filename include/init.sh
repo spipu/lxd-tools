@@ -1,6 +1,7 @@
 #!/bin/bash
 
 INCLUDE_DIR="$SCRIPT_DIR/include"
+TEMPLATE_DIR="$SCRIPT_DIR/template"
 
 # Generic Includes
 source $INCLUDE_DIR/init-vars.sh

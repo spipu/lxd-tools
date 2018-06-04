@@ -1,0 +1,3 @@
+Cmnd_Alias DELIVERYSERVICEALLOWED=/bin/systemctl status apache2.service, /bin/systemctl reload apache2.service
+{{ LXD_DELIVERY_USER }} ALL=(www-data) NOPASSWD: ALL
+{{ LXD_DELIVERY_USER }} ALL=(root) NOPASSWD: DELIVERYSERVICEALLOWED
