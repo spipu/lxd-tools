@@ -12,8 +12,8 @@ fi
 
 CURRENT_FOLDER=`pwd`
 
- apt-get -y -qq install lxd > /dev/null
- lxd init
+apt-get -y install lxd
+lxd init
 
 chmod +x $CURRENT_FOLDER/lxd-deploy.sh
 chmod +x $CURRENT_FOLDER/lxd-remove.sh
