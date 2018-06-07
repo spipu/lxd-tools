@@ -4,8 +4,8 @@ INCLUDE_DIR="$SCRIPT_DIR/include"
 TEMPLATE_DIR="$SCRIPT_DIR/template"
 
 # Generic Includes
-source $INCLUDE_DIR/init-vars.sh
 source $INCLUDE_DIR/messages.sh
+source $INCLUDE_DIR/init-vars.sh
 
 # Do we have a lxd file or not ?
 if [ -f "$FILENAME_TEMPLATE" ]; then

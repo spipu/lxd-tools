@@ -12,6 +12,8 @@ fi
 
 LXD_IP=`sudo lxc list $LXD_NAME --format csv -c 4 | cut -d' ' -f1`
 
+showWarning "Started"
+
 source $INCLUDE_DIR/remove/clean-knowhosts.sh
 source $INCLUDE_DIR/remove/clean-etc-hosts.sh
 source $INCLUDE_DIR/remove/delete-container.sh

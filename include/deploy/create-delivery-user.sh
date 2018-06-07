@@ -11,7 +11,7 @@ sudo lxc exec $LXD_NAME -- sed -i "s/#alias/alias/g" $HOME_DIR/.bashrc
 showMessage " > configure ssh key for delivery user"
 
 sudo lxc exec $LXD_NAME -- mkdir -p /home/$LXD_DELIVERY_USER/.ssh/
-sudo lxc file push ~/.ssh/id_rsa.pub $LXD_NAME/home/$LXD_DELIVERY_USER/.ssh/authorized_keys
+sudo lxc file push $CURRENT_USER_SSH_KEY $LXD_NAME/home/$LXD_DELIVERY_USER/.ssh/authorized_keys
 sudo lxc exec $LXD_NAME -- chmod 700 /home/$LXD_DELIVERY_USER/.ssh
 sudo lxc exec $LXD_NAME -- chmod 600 /home/$LXD_DELIVERY_USER/.ssh/authorized_keys
 sudo lxc exec $LXD_NAME -- chown -R $LXD_DELIVERY_USER.www-data /home/$LXD_DELIVERY_USER/.ssh

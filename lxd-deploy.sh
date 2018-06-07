@@ -10,6 +10,8 @@ if [ -d "$LXD_FOLDER" ]; then
     showError "The asked container already exits"
 fi
 
+showWarning "Started"
+
 source $INCLUDE_DIR/deploy/create-container.sh
 source $INCLUDE_DIR/deploy/add-to-etc-hosts.sh
 source $INCLUDE_DIR/deploy/upgrade.sh
