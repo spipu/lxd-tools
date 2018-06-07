@@ -6,6 +6,7 @@ readParameters() {
     fi
 
     LXD_NAME="$1"
-    LXD_HOST="$LXD_NAME.lxd"
+    LXD_HOSTS=("$LXD_NAME.lxd")
+    LXD_MOUNTS=()
     LXD_DELIVERY_USER="delivery"
 }

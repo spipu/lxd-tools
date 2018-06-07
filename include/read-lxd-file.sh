@@ -10,10 +10,12 @@ readParameters() {
         showError "Template file $FILENAME_TEMPLATE did not contain a name= assignment"
     fi
 
-    LXD_HOST=$(grep "^host=" "$FILENAME_TEMPLATE" | cut -d= -f2- | head -1)
-    if [ ! "$LXD_HOST" ] ; then
-        LXD_HOST="$LXD_NAME.lxd"
+    LXD_HOSTS=($(grep "^host=" "$FILENAME_TEMPLATE" | cut -d= -f2-))
+    if [ ! "$LXD_HOSTS" ] ; then
+        LXD_HOSTS=("$LXD_NAME.lxd")
     fi
+
+    LXD_MOUNTS=($(grep "^mount=" "$FILENAME_TEMPLATE" | cut -d= -f2-))
 
     LXD_DELIVERY_USER=$(grep "^delivery-user=" "$FILENAME_TEMPLATE" | cut -d= -f2- | head -1)
     if [ ! "$LXD_DELIVERY_USER" ] ; then

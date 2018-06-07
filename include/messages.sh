@@ -25,3 +25,14 @@ showError() {
     echo "$GREEN`date +%d/%m/%Y-%H:%M:%S`$RESET $RED$MESSAGE$RESET"
     exit 1
 }
+
+# Function : Show a resume
+showResume() {
+    HOSTS="${LXD_HOSTS[@]}"
+    MOUNTS="${LXD_MOUNTS[@]}"
+
+    showMessage "  - name:          $LXD_NAME"
+    showMessage "  - hosts:         $HOSTS"
+    showMessage "  - delivery user: $LXD_DELIVERY_USER"
+    showMessage "  - mounts:        $MOUNTS"
+}

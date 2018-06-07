@@ -4,9 +4,7 @@ SCRIPT_DIR=`dirname "$(readlink -f $0)"`
 source ${SCRIPT_DIR}/include/init.sh
 
 showWarning "Remove the following container"
-showMessage "  - name:          $LXD_NAME"
-showMessage "  - host:          $LXD_HOST"
-showMessage "  - delivery user: $LXD_DELIVERY_USER"
+showResume
 
 if [ ! -d "$LXD_FOLDER" ]; then
     showError "The asked containter does not exist"

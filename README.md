@@ -8,12 +8,30 @@ in first, launch the init script:
 sudo ./install.sh
 ```
 
-then you can :
+then you can:
 
-  * create a lxd with `lxd-deploy`
-  * remove a lxd with `lxd-remove`
+  * create a lxd with `lxd-deploy [name]`
+  * remove a lxd with `lxd-remove [name]`
 
-## Others
+## lxdfile
+
+you can create a `lxdfile` to easily configure a lxc. Here is a example:
+
+```
+name=test
+host=test.lxd
+host=test.local
+delivery-user=delivery
+mount=@todo
+mount=@todo
+```
+
+then you can:
+
+  * create your lxd with `lxd-deploy`
+  * remove your lxd with `lxd-remove`
+  
+## LXD native commands
 
 ### Templates list
 

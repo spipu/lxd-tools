@@ -14,7 +14,7 @@ else
     source $INCLUDE_DIR/read-user-entry.sh
 fi
 
-# Read the paramters (from lxdfile or user entry)
+# Read the parameters (from lxdfile or user entry)
 readParameters $1
 
 # Validate the lxd name
