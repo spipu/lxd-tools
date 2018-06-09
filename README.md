@@ -22,8 +22,8 @@ name=test
 host=test.lxd
 host=test.local
 delivery-user=delivery
-mount=@todo
-mount=@todo
+mount=.:/var/www/toto
+mount=/other/folder:/var/www/titi
 ```
 
 then you can:
