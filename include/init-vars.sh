@@ -6,6 +6,11 @@ if [ "$CURRENT_USER" == "root" ]; then
     showError "You must not execute this script as root user."
 fi
 
+CURRENT_USER_UID=`id -u $CURRENT_USER`
+if [ "$CURRENT_USER_UID" -eq 0 ]; then
+    showError "You user id is invalid."
+fi
+
 # The user must have a RSA ssh key
 CURRENT_USER_SSH_KEY=$(readlink -f ~/.ssh/id_rsa.pub)
 if [ ! -f $CURRENT_USER_SSH_KEY ]; then
