@@ -18,6 +18,7 @@ source $INCLUDE_DIR/deploy/upgrade.sh
 source $INCLUDE_DIR/deploy/configure-ssh.sh
 source $INCLUDE_DIR/deploy/add-to-knowhosts.sh
 source $INCLUDE_DIR/deploy/create-delivery-user.sh
+source $INCLUDE_DIR/deploy/mount.sh
 source $INCLUDE_DIR/deploy/test.sh
 
 showWarning "Finished"
