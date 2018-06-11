@@ -11,8 +11,10 @@ if [ "$CURRENT_USER_UID" -eq 0 ]; then
     showError "You user id is invalid."
 fi
 
+CURRENT_USER_HOME=$(getent passwd "$CURRENT_USER" | cut -d: -f6)
+
 # The user must have a RSA ssh key
-CURRENT_USER_SSH_KEY=$(readlink -f ~/.ssh/id_rsa.pub)
+CURRENT_USER_SSH_KEY=$(readlink -f $CURRENT_USER_HOME/.ssh/id_rsa.pub)
 if [ ! -f $CURRENT_USER_SSH_KEY ]; then
     showError "You must have a public ssh RAS key in $CURRENT_USER_SSH_KEY"
 fi
@@ -20,6 +22,7 @@ fi
 # Get the current execution folder
 CURRENT_FOLDER=`pwd`
 FILENAME_TEMPLATE="$CURRENT_FOLDER/lxdfile"
+DIRNAME_TEMPLATE=$(dirname "$(readlink -f $FILENAME_TEMPLATE)")
 
 # Default Parameters
 LXD_NAME=""

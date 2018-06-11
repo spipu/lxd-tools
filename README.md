@@ -60,7 +60,7 @@ lxc file pull test/etc/truc.zip .
 
 ### Mount
 
-lxc config device add test testDevice disk source=/home/lamin/ path=/host/lamin 
+lxc config device add test testDevice disk source=/home/user/ path=/host/user 
 
 ### Export
 

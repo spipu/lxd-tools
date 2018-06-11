@@ -12,17 +12,17 @@ APACHE_GROUP_MOD=${APACHE_GROUP:+"-g $APACHE_GROUP"}
 
 sudo lxc exec $LXD_NAME -- useradd $APACHE_GROUP_MOD  -s /bin/bash -u "$CURRENT_USER_UID" -m $LXD_DELIVERY_USER
 
-HOME_DIR="/home/$LXD_DELIVERY_USER"
-sudo lxc exec $LXD_NAME -- sed -i "s/#force_color_prompt/force_color_prompt/g" $HOME_DIR/.bashrc
-sudo lxc exec $LXD_NAME -- sed -i "s/#alias/alias/g" $HOME_DIR/.bashrc
+LXD_DELIVERY_HOME="/home/$LXD_DELIVERY_USER"
+sudo lxc exec $LXD_NAME -- sed -i "s/#force_color_prompt/force_color_prompt/g" $LXD_DELIVERY_HOME/.bashrc
+sudo lxc exec $LXD_NAME -- sed -i "s/#alias/alias/g" $LXD_DELIVERY_HOME/.bashrc
 
 showMessage " > configure ssh key for delivery user"
 
-sudo lxc exec $LXD_NAME -- mkdir -p /home/$LXD_DELIVERY_USER/.ssh/
-sudo lxc file push $CURRENT_USER_SSH_KEY $LXD_NAME/home/$LXD_DELIVERY_USER/.ssh/authorized_keys
-sudo lxc exec $LXD_NAME -- chmod 700 /home/$LXD_DELIVERY_USER/.ssh
-sudo lxc exec $LXD_NAME -- chmod 600 /home/$LXD_DELIVERY_USER/.ssh/authorized_keys
-sudo lxc exec $LXD_NAME -- chown -R $LXD_DELIVERY_USER.$APACHE_GROUP /home/$LXD_DELIVERY_USER/.ssh
+sudo lxc exec $LXD_NAME -- mkdir -p $LXD_DELIVERY_HOME/.ssh/
+sudo lxc file push $CURRENT_USER_SSH_KEY $LXD_NAME$LXD_DELIVERY_HOME/.ssh/authorized_keys
+sudo lxc exec $LXD_NAME -- chmod 700 $LXD_DELIVERY_HOME/.ssh
+sudo lxc exec $LXD_NAME -- chmod 600 $LXD_DELIVERY_HOME/.ssh/authorized_keys
+sudo lxc exec $LXD_NAME -- chown -R $LXD_DELIVERY_USER.$APACHE_GROUP $LXD_DELIVERY_HOME/.ssh
 
 showMessage " > configure default folder for delivery user"
 
