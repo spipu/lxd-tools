@@ -5,8 +5,10 @@ readParameters() {
         showError "ERROR: You must provide a LXD name"
     fi
 
-    if [ -z $2 ] ; then
-        showError "ERROR: You must provide a template name"
+    if [ "$LXD_MODE" == "deploy" ] ; then
+        if [ -z $2 ] ; then
+            showError "ERROR: You must provide a template name"
+        fi
     fi
 
     LXD_NAME="$1"

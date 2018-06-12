@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LXD_MODE="deploy"
+
 SCRIPT_DIR=`dirname "$(readlink -f $0)"`
 source ${SCRIPT_DIR}/include/init.sh
 

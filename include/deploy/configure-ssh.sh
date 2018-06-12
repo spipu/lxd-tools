@@ -2,6 +2,7 @@
 
 showMessage " > Configure SSH"
 
+packageInstall apt-utils
 packageInstall sudo
 packageInstall ssh
 packageInstall openssh-server
