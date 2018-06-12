@@ -34,11 +34,18 @@ then you can:
 
 ## Templates
 
-The available templates are:
+The available templates are listed bellow.
 
-* debian-7-wheezy
-* debian-8-jessie
+### Debian
+
 * debian-9-stretch
+* debian-8-jessie
+* debian-7-wheezy
+* debian-6-squeeze
+
+### Centos
+
+@todo
 
 ## LXD native commands
 

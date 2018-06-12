@@ -2,7 +2,6 @@
 
 showMessage " > Stop Container"
 sudo lxc stop $LXD_NAME --force > /dev/null
-sudo lxc stop $LXD_NAME --force > /dev/null
 sleep 1
 
 showMessage " > Delete Container"

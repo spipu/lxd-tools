@@ -17,5 +17,5 @@ packageInstall() {
 }
 
 serviceRestart() {
-    sudo lxc exec $LXD_NAME -- service $1 restart
+    sudo lxc exec $LXD_NAME -- service $1 restart > /dev/null
 }

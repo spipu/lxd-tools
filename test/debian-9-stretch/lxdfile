@@ -4,4 +4,3 @@ host=debian9.lxc
 host=debian9.local
 delivery-user=smile
 mount=.:/home/smile/test
-
