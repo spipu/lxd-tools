@@ -2,10 +2,10 @@
 
 ## How To
 
-in first, launch the init script:
+in first, clone this repo, and launch the init script:
 
 ```bash
-sudo ./install.sh
+./install.sh
 ```
 
 then you can:
@@ -15,7 +15,7 @@ then you can:
 
 ## lxdfile
 
-you can create a `lxdfile` to easily configure a lxc. Here is a example:
+you can create a `lxdfile` to easily configure a lxd. Here is a example:
 
 ```
 name=test

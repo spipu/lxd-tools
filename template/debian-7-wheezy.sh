@@ -3,13 +3,11 @@
 LXD_TEMPLATE_IMAGE="debian/wheezy"
 LXD_APACHE_GROUP="www-data"
 
-packageUpdate() {
-    sudo lxc exec $LXD_NAME -- apt-get -qq update > /dev/null
-}
-
 packageUpgrade() {
-    sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y dist-upgrade" > /dev/null
-    sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y autoremove"   > /dev/null
+    sudo lxc exec $LXD_NAME -- apt-get -qq update > /dev/null
+    sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y dist-upgrade"      > /dev/null
+    sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y autoremove"        > /dev/null
+    sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y install apt-utils" > /dev/null 2>&1
 }
 
 packageInstall() {

@@ -2,5 +2,4 @@
 
 showMessage " > Upgrade default packages"
 
-packageUpdate
 packageUpgrade
