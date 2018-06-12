@@ -14,9 +14,6 @@ else
     source $INCLUDE_DIR/read-user-entry.sh
 fi
 
-# Read the parameters (from lxdfile or user entry)
-readParameters $1
-
 # Validate the lxd name
 LXD_NAME=$(echo $LXD_NAME | tr 'A-Z' 'a-z')
 LXD_NAME_PROTECT=$(echo $LXD_NAME | tr -d 'a-z0-9-')
