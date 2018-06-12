@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LXD_TEMPLATE_IMAGE="debian/jessie"
+LXD_TEMPLATE_IMAGE="debian/wheezy"
 LXD_APACHE_GROUP="www-data"
 
 packageUpdate() {
@@ -17,5 +17,5 @@ packageInstall() {
 }
 
 serviceRestart() {
-    sudo lxc exec $LXD_NAME -- systemctl restart $1.service
+    sudo lxc exec $LXD_NAME -- service $1 restart
 }
