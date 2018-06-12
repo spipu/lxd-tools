@@ -22,6 +22,5 @@ for LXD_MOUNT in ${LXD_MOUNTS[@]}; do
     MOUNT_DEVICE="${MOUNT_SRC_MD5}Device"
     showMessage "  - $MOUNT_SRC => $MOUNT_DST in $MOUNT_DEVICE"
 
-#    sudo lxc exec $LXD_NAME -- mkdir -p "$MOUNT_DST"
     sudo lxc config device add $LXD_NAME ${MOUNT_DEVICE} disk source="$MOUNT_SRC" path="$MOUNT_DST" > /dev/null
 done

@@ -26,7 +26,7 @@ sudo lxc exec $LXD_NAME -- chmod -R +X /var/www
 showMessage " > configure sudo for delivery user"
 
 sudo lxc exec $LXD_NAME -- mkdir -p /etc/sudoers.d/
-sudo lxc exec $LXD_NAME -- echo "Runas_Alias SERVERACCOUNTS=$LXD_APACHE_GROUP"          >  /etc/sudoers.d/$LXD_DELIVERY_USER
-sudo lxc exec $LXD_NAME -- echo "$LXD_DELIVERY_USER ALL=(SERVERACCOUNTS) NOPASSWD: ALL" >> /etc/sudoers.d/$LXD_DELIVERY_USER
+sudo lxc exec $LXD_NAME -- sh -c "echo 'Runas_Alias SERVERACCOUNTS=$LXD_APACHE_GROUP'          >  /etc/sudoers.d/$LXD_DELIVERY_USER"
+sudo lxc exec $LXD_NAME -- sh -c "echo '$LXD_DELIVERY_USER ALL=(SERVERACCOUNTS) NOPASSWD: ALL' >> /etc/sudoers.d/$LXD_DELIVERY_USER"
 sudo lxc exec $LXD_NAME -- chmod 440 /etc/sudoers.d/$LXD_DELIVERY_USER
 sudo lxc exec $LXD_NAME -- chown root.root /etc/sudoers.d/$LXD_DELIVERY_USER
