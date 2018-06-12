@@ -22,7 +22,6 @@ fi
 # Get the current execution folder
 CURRENT_FOLDER=`pwd`
 FILENAME_TEMPLATE="$CURRENT_FOLDER/lxdfile"
-DIRNAME_TEMPLATE=$(dirname "$(readlink -f $FILENAME_TEMPLATE)")
 
 # Default Parameters
 LXD_NAME=""

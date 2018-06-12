@@ -3,6 +3,11 @@
 showMessage " > Create Container"
 sudo lxc launch images:debian/stretch $LXD_NAME > /dev/null
 
+showMessage " > Configure Container"
+
+#sudo lxc config set $LXD_NAME raw.idmap "both $CURRENT_USER_UID $CURRENT_USER_UID"
+sudo lxc restart $LXD_NAME
+
 showMessage " > Waiting for IP"
 
 while [ ! "$LXD_IP" ] ; do

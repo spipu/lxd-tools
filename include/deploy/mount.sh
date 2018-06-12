@@ -9,7 +9,7 @@ for LXD_MOUNT in ${LXD_MOUNTS[@]}; do
     if echo "$MOUNT_SRC" | grep -q ^~/ ; then
         MOUNT_SRC="$CURRENT_USER_HOME/${MOUNT_SRC#~/}"
     elif ! echo "$MOUNT_SRC" | grep -q ^/ ; then
-        MOUNT_SRC="$DIRNAME_TEMPLATE/$MOUNT_SRC"
+        MOUNT_SRC="$CURRENT_FOLDER/$MOUNT_SRC"
     else
         MOUNT_SRC="$MOUNT_SRC"
     fi

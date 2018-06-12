@@ -3,21 +3,25 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 source ./include/messages.sh
+source ./include/init-vars.sh
 
-# Get the current execution user
-CURRENT_USER=`whoami`
-if [ "$CURRENT_USER" != "root" ]; then
-    showError "You must execute this script as root user."
-fi
+showMessage "Install LXD tools"
 
-CURRENT_FOLDER=`pwd`
+showWarning "Started"
 
-apt-get -y install lxd
-lxd init
+showMessage " > Install package"
 
-chmod +x $CURRENT_FOLDER/lxd-deploy.sh
-chmod +x $CURRENT_FOLDER/lxd-remove.sh
+sudo apt-get -qq -y install lxd  > /dev/null
 
-ln -fs $CURRENT_FOLDER/lxd-deploy.sh   /usr/local/bin/lxd-deploy
-ln -fs $CURRENT_FOLDER/lxd-remove.sh   /usr/local/bin/lxd-remove
+showMessage " > Configure LXD"
 
+sudo lxd init --auto
+
+showMessage " > Create Symlinks"
+
+sudo chmod +x $CURRENT_FOLDER/lxd-deploy.sh
+sudo chmod +x $CURRENT_FOLDER/lxd-remove.sh
+sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh   /usr/local/bin/lxd-deploy
+sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh   /usr/local/bin/lxd-remove
+
+showWarning "Finished"
