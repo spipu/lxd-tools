@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ -z "$1" ] ; then
-    showError "ERROR: You must provide a LXD name"
+    showUsage "ERROR: You must provide a LXD name"
 fi
 
 if [ "$LXD_MODE" = "deploy" ] ; then
     if [ -z "$2" ] ; then
-        showError "ERROR: You must provide a template name"
+        showUsage "You must provide a template name"
     fi
 fi
 

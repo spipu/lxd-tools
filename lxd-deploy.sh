@@ -13,7 +13,7 @@ if [ -d "$LXD_FOLDER" ]; then
 fi
 
 if [ ! -f "$TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh" ]; then
-    showError "The asked template name $LXD_TEMPLATE_NAME does not exists"
+    showUsage "The asked template name $LXD_TEMPLATE_NAME does not exists"
 fi
 source $TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh
 

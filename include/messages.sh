@@ -39,3 +39,17 @@ showResume() {
     showMessage "  - delivery user: $LXD_DELIVERY_USER"
     showMessage "  - mounts:        $MOUNTS"
 }
+
+# Function : Show usage
+showUsage() {
+    MESSAGE=$1;
+    echo "$GREEN`date +%d/%m/%Y-%H:%M:%S`$RESET $RED$MESSAGE$RESET"
+    echo ""
+    echo "$GREEN Available Templates:$RESET"
+    for entry in $TEMPLATE_DIR/*; do
+        name=$(basename "$entry" | cut -d'.' -f1)
+        echo "  - $BLUE$name$RESET"
+    done
+    echo ""
+    exit 1
+}
