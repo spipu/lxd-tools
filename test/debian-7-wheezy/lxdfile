@@ -1,0 +1,7 @@
+name=debian7
+template=debian-7-wheezy
+host=debian7.lxc
+host=debian7.local
+delivery-user=smile
+mount=.:/home/smile/test
+
