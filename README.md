@@ -41,7 +41,6 @@ The available templates are listed bellow.
 * debian-9-stretch
 * debian-8-jessie
 * debian-7-wheezy
-* debian-6-squeeze
 
 ### Centos
 

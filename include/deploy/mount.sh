@@ -20,7 +20,7 @@ for LXD_MOUNT in ${LXD_MOUNTS[@]}; do
 
     MOUNT_SRC_MD5=$(echo "$MOUNT_SRC" | md5sum | cut -d' ' -f1)
     MOUNT_DEVICE="${MOUNT_SRC_MD5}Device"
-    showMessage "  - $MOUNT_SRC => $MOUNT_DST in $MOUNT_DEVICE"
+    showMessage "  - $MOUNT_SRC => $MOUNT_DST"
 
     sudo lxc config device add $LXD_NAME ${MOUNT_DEVICE} disk source="$MOUNT_SRC" path="$MOUNT_DST" > /dev/null
 done

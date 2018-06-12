@@ -1,6 +1,0 @@
-name=debian6
-template=debian-6-squeeze
-host=debian6.lxc
-host=debian6.local
-delivery-user=smile
-mount=.:/home/smile/test
