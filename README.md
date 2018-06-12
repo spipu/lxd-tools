@@ -10,8 +10,9 @@ in first, clone this repo, and launch the init script:
 
 then you can:
 
-  * create a lxd with `lxd-deploy [name] [template-name]`
-  * remove a lxd with `lxd-remove [name]`
+  * create a lxd container with `lxd-deploy [name] [template-name]`
+  * remove a lxd container with `lxd-remove [name]`
+  * list your lxd containers with `lxd-list`
 
 ## lxdfile
 
