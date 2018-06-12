@@ -1,12 +1,15 @@
 #!/bin/bash
 
 showMessage " > Create Container"
-sudo lxc launch images:$LXD_TEMPLATE_IMAGE $LXD_NAME > /dev/null
+sudo lxc init images:$LXD_TEMPLATE_IMAGE $LXD_NAME > /dev/null
 
 showMessage " > Configure Container"
 
 sudo lxc config set $LXD_NAME raw.idmap "both $CURRENT_USER_UID $CURRENT_USER_UID"
-sudo lxc restart $LXD_NAME
+
+showMessage " > Start Container"
+sudo lxc start $LXD_NAME &
+sleep 1
 
 showMessage " > Waiting for IP"
 

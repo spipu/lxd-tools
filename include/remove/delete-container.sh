@@ -1,8 +1,9 @@
 #!/bin/bash
 
 showMessage " > Stop Container"
-sudo lxc exec $LXD_NAME -- shutdown -h now
+sudo lxc stop $LXD_NAME --force > /dev/null
+sudo lxc stop $LXD_NAME --force > /dev/null
 sleep 1
 
 showMessage " > Delete Container"
-sudo lxc delete $LXD_NAME
+sudo lxc delete $LXD_NAME > /dev/null
