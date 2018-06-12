@@ -10,6 +10,11 @@ readParameters() {
         showError "Template file $FILENAME_TEMPLATE did not contain a name= assignment"
     fi
 
+    LXD_TEMPLATE_NAME=$(grep "^template=" "$FILENAME_TEMPLATE" | cut -d= -f2- | head -1)
+    if [ ! "$LXD_TEMPLATE_NAME" ] ; then
+        showError "Template file $FILENAME_TEMPLATE did not contain a template= assignment"
+    fi
+
     LXD_HOSTS=($(grep "^host=" "$FILENAME_TEMPLATE" | cut -d= -f2-))
     if [ ! "$LXD_HOSTS" ] ; then
         LXD_HOSTS=("$LXD_NAME.lxd")

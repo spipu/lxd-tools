@@ -17,11 +17,23 @@ showMessage " > Configure LXD"
 
 sudo lxd init --auto
 
+UID_LINE="lxd:$CURRENT_USER_UID:1"
+grep -q -F "$UID_LINE" /etc/subuid || echo "$UID_LINE" | sudo tee -a /etc/subuid > /dev/null
+grep -q -F "$UID_LINE" /etc/subgid || echo "$UID_LINE" | sudo tee -a /etc/subgid > /dev/null
+
+UID_LINE="root:$CURRENT_USER_UID:1"
+grep -q -F "$UID_LINE" /etc/subuid || echo "$UID_LINE" | sudo tee -a /etc/subuid > /dev/null
+grep -q -F "$UID_LINE" /etc/subgid || echo "$UID_LINE" | sudo tee -a /etc/subgid > /dev/null
+
 showMessage " > Create Symlinks"
 
 sudo chmod +x $CURRENT_FOLDER/lxd-deploy.sh
 sudo chmod +x $CURRENT_FOLDER/lxd-remove.sh
 sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh   /usr/local/bin/lxd-deploy
 sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh   /usr/local/bin/lxd-remove
+
+showMessage " > Start Service"
+
+sudo systemctl restart lxd
 
 showWarning "Finished"

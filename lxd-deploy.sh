@@ -10,6 +10,11 @@ if [ -d "$LXD_FOLDER" ]; then
     showError "The asked container already exits"
 fi
 
+if [ ! -f "$TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh" ]; then
+    showError "The asked template name $LXD_TEMPLATE_NAME does not exists"
+fi
+source $TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh
+
 showWarning "Started"
 
 source $INCLUDE_DIR/deploy/create-container.sh

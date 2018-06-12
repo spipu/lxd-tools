@@ -32,6 +32,9 @@ showResume() {
     MOUNTS="${LXD_MOUNTS[@]}"
 
     showMessage "  - name:          $LXD_NAME"
+    if [ "$LXD_TEMPLATE_NAME" ]; then
+        showMessage "  - template:      $LXD_TEMPLATE_NAME"
+    fi
     showMessage "  - hosts:         $HOSTS"
     showMessage "  - delivery user: $LXD_DELIVERY_USER"
     showMessage "  - mounts:        $MOUNTS"

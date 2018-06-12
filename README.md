@@ -10,7 +10,7 @@ sudo ./install.sh
 
 then you can:
 
-  * create a lxd with `lxd-deploy [name]`
+  * create a lxd with `lxd-deploy [name] [template-name]`
   * remove a lxd with `lxd-remove [name]`
 
 ## lxdfile
@@ -19,6 +19,7 @@ you can create a `lxdfile` to easily configure a lxc. Here is a example:
 
 ```
 name=test
+template=debian-stretch
 host=test.lxd
 host=test.local
 delivery-user=delivery
