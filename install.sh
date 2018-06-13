@@ -19,9 +19,9 @@ sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh /usr/local/bin/lxd-deploy
 sudo ln -fs $CURRENT_FOLDER/lxd-list.sh   /usr/local/bin/lxd-list
 sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh /usr/local/bin/lxd-remove
 
-NEED_INSTALL=$(sudo dpkg -l lxd 2>/dev/null | grep lxd | wc -l  )
-
 showMessage " > Install package"
+
+NEED_INSTALL=$(sudo dpkg -l lxd 2>/dev/null | grep lxd | wc -l  )
 if [ $NEED_INSTALL -eq 0 ]; then
     sudo apt-get install lxd
     sudo lxd init
