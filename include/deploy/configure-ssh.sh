@@ -2,9 +2,7 @@
 
 showMessage " > Configure SSH"
 
-packageInstall sudo
-packageInstall ssh
-packageInstall openssh-server
+packageInstallSsh
 
 sudo lxc exec $LXD_NAME -- sed -i "s/#Port 22/Port 22/g" /etc/ssh/sshd_config
 sudo lxc exec $LXD_NAME -- sed -i "s/#PermitRootLogin/PermitRootLogin/g" /etc/ssh/sshd_config
@@ -15,7 +13,7 @@ sudo lxc exec $LXD_NAME -- chmod 700 /root/.ssh
 sudo lxc exec $LXD_NAME -- chmod 600 /root/.ssh/authorized_keys
 sudo lxc exec $LXD_NAME -- chown -R root.root /root/.ssh
 
-serviceRestart ssh
+serviceRestartSsh
 
 HOME_DIR="/root"
 sudo lxc exec $LXD_NAME -- sed -i "s/# eval/eval/g" $HOME_DIR/.bashrc

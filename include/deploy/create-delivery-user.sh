@@ -2,6 +2,7 @@
 
 showMessage " > Create delivery user"
 
+sudo lxc exec $LXD_NAME -- groupadd -f $LXD_APACHE_GROUP
 sudo lxc exec $LXD_NAME -- useradd -g $LXD_APACHE_GROUP -s /bin/bash -u "$CURRENT_USER_UID" -m $LXD_DELIVERY_USER
 
 LXD_DELIVERY_HOME="/home/$LXD_DELIVERY_USER"

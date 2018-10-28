@@ -16,9 +16,21 @@ packageInstall()
     sudo lxc exec $LXD_NAME -- sh -c "export DEBIAN_FRONTEND=noninteractive && apt-get -qq -y install $1" > /dev/null
 }
 
+packageInstallSsh()
+{
+    packageInstall sudo
+    packageInstall ssh
+    packageInstall openssh-server
+}
+
 serviceRestart()
 {
     sudo lxc exec $LXD_NAME -- service $1 restart > /dev/null
+}
+
+serviceRestartSsh()
+{
+    serviceRestart ssh
 }
 
 containerCleanup()
