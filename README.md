@@ -46,6 +46,7 @@ The available templates are listed bellow.
 
 ### Ubuntu
 
+* ubuntu-14_04-trusty
 * ubuntu-16_04-xenial
 * ubuntu-18_04-bionic
 
