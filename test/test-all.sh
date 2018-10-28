@@ -13,6 +13,8 @@ FOLDERS=(
     "ubuntu-14_04-trusty"
     "ubuntu-16_04-xenial"
     "ubuntu-18_04-bionic"
+    # Centos
+    "centos-7"
 )
 
 for FOLDER in "${FOLDERS[@]}"
