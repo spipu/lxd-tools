@@ -43,6 +43,11 @@ The available templates are listed bellow.
 * debian-8-jessie
 * debian-7-wheezy
 
+### Ubuntu
+
+* ubuntu-16_04-xenial
+* ubuntu-18_04-bionic
+
 ### Centos
 
 @todo

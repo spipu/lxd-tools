@@ -1,0 +1,6 @@
+name=ubuntu-bionic
+template=ubuntu-18_04-bionic
+host=ubuntu-bionic.lxc
+host=ubuntu-bionic.local
+delivery-user=smile
+mount=.:/home/smile/test
