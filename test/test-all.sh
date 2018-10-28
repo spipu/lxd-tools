@@ -5,23 +5,19 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 FOLDERS=(
     # Debian
-    "debian-7-wheezy"
-    "debian-8-jessie"
-    "debian-9-stretch"
-    "debian-10-buster"
+    "debian7"
+    "debian8"
+    "debian9"
+    "debian10"
     # Ubuntu
-    "ubuntu-14_04-trusty"
-    "ubuntu-16_04-xenial"
-    "ubuntu-18_04-bionic"
+    "ubuntu14"
+    "ubuntu16"
+    "ubuntu18"
     # Centos
-    "centos-7"
+    "centos7"
 )
 
 for FOLDER in "${FOLDERS[@]}"
 do
-    echo "Test [$FOLDER]"
-    cd $FOLDER
-    lxd-deploy
-    lxd-remove
-    cd ..
+    ./test-one.sh $FOLDER
 done

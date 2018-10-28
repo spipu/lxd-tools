@@ -2,5 +2,5 @@ name=centos7
 template=centos-7
 host=centos7.lxc
 host=centos7.local
-delivery-user=smile
-mount=.:/home/smile/test
+delivery-user=delivery
+mount=.:/home/delivery/test

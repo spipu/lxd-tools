@@ -1,0 +1,6 @@
+name=ubuntu14
+template=ubuntu-14_04-trusty
+host=ubuntu14.lxc
+host=ubuntu14.local
+delivery-user=delivery
+mount=.:/home/delivery/test

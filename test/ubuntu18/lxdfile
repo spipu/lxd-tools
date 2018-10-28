@@ -1,0 +1,6 @@
+name=ubuntu18
+template=ubuntu-18_04-bionic
+host=ubuntu18.lxc
+host=ubuntu18.local
+delivery-user=delivery
+mount=.:/home/delivery/test

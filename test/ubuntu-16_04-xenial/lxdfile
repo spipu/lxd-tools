@@ -1,6 +1,0 @@
-name=ubuntu-xenial
-template=ubuntu-16_04-xenial
-host=ubuntu-xenial.lxc
-host=ubuntu-xenial.local
-delivery-user=smile
-mount=.:/home/smile/test

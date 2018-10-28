@@ -2,5 +2,5 @@ name=debian8
 template=debian-8-jessie
 host=debian8.lxc
 host=debian8.local
-delivery-user=smile
-mount=.:/home/smile/test
+delivery-user=delivery
+mount=.:/home/delivery/test

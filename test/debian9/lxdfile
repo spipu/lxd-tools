@@ -2,5 +2,5 @@ name=debian9
 template=debian-9-stretch
 host=debian9.lxc
 host=debian9.local
-delivery-user=smile
-mount=.:/home/smile/test
+delivery-user=delivery
+mount=.:/home/delivery/test
