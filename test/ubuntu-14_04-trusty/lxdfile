@@ -1,0 +1,6 @@
+name=ubuntu-trusty
+template=ubuntu-14_04-trusty
+host=ubuntu-trusty.lxc
+host=ubuntu-trusty.local
+delivery-user=smile
+mount=.:/home/smile/test
