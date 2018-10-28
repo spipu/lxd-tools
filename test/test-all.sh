@@ -7,6 +7,7 @@ FOLDERS=(
     "debian-7-wheezy"
     "debian-8-jessie"
     "debian-9-stretch"
+    "debian-10-buster"
     "ubuntu-16_04-xenial"
     "ubuntu-18_04-bionic"
 )

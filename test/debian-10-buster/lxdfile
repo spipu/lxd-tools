@@ -1,0 +1,6 @@
+name=debian10
+template=debian-10-buster
+host=debian10.lxc
+host=debian10.local
+delivery-user=smile
+mount=.:/home/smile/test

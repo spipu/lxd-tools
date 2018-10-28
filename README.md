@@ -39,9 +39,10 @@ The available templates are listed bellow.
 
 ### Debian
 
-* debian-9-stretch
-* debian-8-jessie
 * debian-7-wheezy
+* debian-8-jessie
+* debian-9-stretch
+* debian-10-buster
 
 ### Ubuntu
 
