@@ -52,7 +52,7 @@ The available templates are listed bellow.
 
 ### Centos
 
-@todo
+* centos-7
 
 ## LXD native commands
 
