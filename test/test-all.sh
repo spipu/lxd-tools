@@ -14,6 +14,7 @@ FOLDERS=(
     "ubuntu16"
     "ubuntu18"
     # Centos
+    "centos6"
     "centos7"
 )
 
