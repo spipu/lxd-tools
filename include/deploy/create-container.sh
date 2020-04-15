@@ -14,7 +14,7 @@ sleep 1
 showMessage " > Waiting for IP"
 
 while [ ! "$LXD_IP" ] ; do
-    LXD_IP=`sudo lxc list $LXD_NAME --format csv -c 4 | cut -d' ' -f1`
+    LXD_IP=`sudo lxc list "^$LXD_NAME\$" --format csv -c 4 | cut -d' ' -f1`
 done
 
 showMessage "  - $LXD_IP"
