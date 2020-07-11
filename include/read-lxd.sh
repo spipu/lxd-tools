@@ -15,4 +15,10 @@ if [ "$LXD_NAME_PROTECT" != "" ]; then
 fi
 
 # LXD folder
-LXD_FOLDER="/var/lib/lxd/storage-pools/default/containers/$LXD_NAME"
+if [[ -d "/var/snap/lxd/common/lxd" ]]; then
+    LXD_FOLDER="/var/snap/lxd/common/lxd/storage-pools/default/containers/${LXD_NAME}"
+elif [[ -d "/var/lib/lxd" ]]; then
+    LXD_FOLDER="/var/lib/lxd/storage-pools/default/containers/{$LXD_NAME}"
+else
+    showError "Unable to find LXD storage-pool folder."
+fi
