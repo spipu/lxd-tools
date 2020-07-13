@@ -1,14 +1,40 @@
-# LXD Tools by Lamin
+# LXD Tools
+
+**IMPORTANT**: All this is experimental !
+
+## Requirements
+
+You have an **Ubuntu 18.04** or **20.04**.
+ 
+It has not been tested on other versions.
+
+The LXD package must have been installed :
+
+```shell
+sudo apt-get install lxd
+```
+
+And configured :
+
+```shell
+sudo lxd init
+```
+
+**IMPORTANT**:
+> During the init, use the default choice for each question, except for the type of the **storage-pools**.
+> For **storage-pools**, answer **dir**.
+
 
 ## How To
 
-in first, clone this repo, and launch the init script:
+
+Clone this repo, and launch the init script:
 
 ```bash
 ./install.sh
 ```
 
-then you can:
+Then you can:
 
   * create a lxd container with `lxd-deploy [name] [template-name]`
   * remove a lxd container with `lxd-remove [name]`
@@ -35,7 +61,7 @@ then you can:
 
 ## Templates
 
-The available templates are listed bellow.
+The available templates are listed below.
 
 ### Debian
 
