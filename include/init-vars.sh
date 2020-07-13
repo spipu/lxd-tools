@@ -16,7 +16,7 @@ CURRENT_USER_HOME=$(getent passwd "$CURRENT_USER" | cut -d: -f6)
 # The user must have a RSA ssh key
 CURRENT_USER_SSH_KEY=$(readlink -f $CURRENT_USER_HOME/.ssh/id_rsa.pub)
 if [ ! -f $CURRENT_USER_SSH_KEY ]; then
-    showError "You must have a public ssh RAS key in $CURRENT_USER_SSH_KEY"
+    showError "You must have a public ssh RSA key in $CURRENT_USER_SSH_KEY"
 fi
 
 # Get the current execution folder

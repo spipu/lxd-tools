@@ -4,7 +4,7 @@
 
 ## Requirements
 
-You have an **Ubuntu 18.04** or **20.04**.
+You must have an **Ubuntu 18.04** or **20.04**, and it is compatible with LXD **3** and **4**.
  
 It has not been tested on other versions.
 

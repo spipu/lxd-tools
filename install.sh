@@ -19,14 +19,13 @@ sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh /usr/local/bin/lxd-deploy
 sudo ln -fs $CURRENT_FOLDER/lxd-list.sh   /usr/local/bin/lxd-list
 sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh /usr/local/bin/lxd-remove
 
-showMessage " > Install package"
+showMessage " > Configure package"
 
 NEED_INSTALL=$(sudo dpkg -l lxd 2>/dev/null | grep lxd | wc -l  )
 if [ $NEED_INSTALL -eq 0 ]; then
-    sudo apt-get install lxd
-    sudo lxd init
+    showError "   > LXD Package Not Installed - please look at the README.md file"
 else
-    showWarning "   > Package Already Installed"
+    showWarning "   > LXD Package Installed"
 fi
 
 UID_LINE="lxd:$CURRENT_USER_UID:1"
@@ -39,6 +38,6 @@ grep -q -F "$UID_LINE" /etc/subgid || echo "$UID_LINE" | sudo tee -a /etc/subgid
 
 showMessage " > Restart Service"
 
-sudo systemctl restart lxd
+sudo systemctl restart lxd 2>&1 > /dev/null
 
 showWarning "Finished"
