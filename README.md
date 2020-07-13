@@ -65,21 +65,23 @@ The available templates are listed below.
 
 ### Debian
 
-* debian-7-wheezy
 * debian-8-jessie
 * debian-9-stretch
 * debian-10-buster
+* debian-11-bullseye
 
 ### Ubuntu
 
 * ubuntu-14_04-trusty
 * ubuntu-16_04-xenial
 * ubuntu-18_04-bionic
+* ubuntu-20_04-focal
 
 ### Centos
 
 * centos-6
 * centos-7
+* centos-8
 
 ## LXD native commands
 
