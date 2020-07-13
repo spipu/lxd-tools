@@ -1,0 +1,6 @@
+name=centos8
+template=centos-8
+host=centos8.lxc
+host=centos8.local
+delivery-user=delivery
+mount=.:/home/delivery/test

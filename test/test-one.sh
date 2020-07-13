@@ -5,13 +5,21 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 FOLDER="$1"
 
-echo "Test [$FOLDER]"
+echo "===[$FOLDER]================================================"
+
+echo "===[$FOLDER][Create]========================================"
 cd $FOLDER
 lxd-deploy
 
+echo "===[$FOLDER][Test]=========================================="
 HOST="${FOLDER}.lxc"
-ssh root@$HOST     ls -l
-ssh delivery@$HOST ls -l
+ssh root@$HOST     "cat /etc/os-release"
+ssh root@$HOST     "whoami && pwd"
+ssh delivery@$HOST "whoami && pwd"
 
+echo "===[$FOLDER][Remove]========================================"
 lxd-remove
 cd ..
+
+echo "===[$FOLDER][Finished]======================================"
+echo ""

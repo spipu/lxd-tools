@@ -1,0 +1,6 @@
+name=debian11
+template=debian-11-bullseye
+host=debian11.lxc
+host=debian11.local
+delivery-user=delivery
+mount=.:/home/delivery/test

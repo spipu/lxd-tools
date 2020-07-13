@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LXD_TEMPLATE_IMAGE="debian/wheezy"
+LXD_TEMPLATE_IMAGE="ubuntu/focal"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()
@@ -25,7 +25,7 @@ packageInstallSsh()
 
 serviceRestart()
 {
-    sudo lxc exec $LXD_NAME -- service $1 restart > /dev/null
+    sudo lxc exec $LXD_NAME -- systemctl restart $1.service > /dev/null
 }
 
 serviceRestartSsh()
@@ -36,4 +36,6 @@ serviceRestartSsh()
 containerCleanup()
 {
     sudo lxc exec $LXD_NAME -- apt-get -qq clean > /dev/null
+    sudo lxc exec $LXD_NAME -- userdel ubuntu
+    sudo lxc exec $LXD_NAME -- rm -rf /home/ubuntu
 }
