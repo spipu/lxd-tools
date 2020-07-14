@@ -1,10 +1,12 @@
 # LXD Tools
 
+[Github Repository](https://github.com/spipu/lxd-tools)
+
 **IMPORTANT**: All this is experimental !
 
 ## Requirements
 
-You must have an **Ubuntu 18.04** or **20.04**, and it is compatible with LXD **3** and **4**.
+It is compatible with Ubuntu **18.04** and **20.04**, and with LXD **3** and **4**.
  
 It has not been tested on other versions.
 
@@ -21,12 +23,12 @@ sudo lxd init
 ```
 
 **IMPORTANT**:
+
 > During the init, use the default choice for each question, except for the type of the **storage-pools**.
 > For **storage-pools**, answer **dir**.
 
 
 ## How To
-
 
 Clone this repo, and launch the init script:
 
@@ -86,3 +88,13 @@ The available templates are listed below.
 ## LXD native commands
 
 Look at this [documentation](./LXD.md) for native LXD commands.
+
+## Help & Support
+
+For questions and bug reports, please use the GitHub issues page.
+
+## License
+
+This program is distributed under the MIT License. For more information see the [./LICENSE.md](./LICENSE.md) file.
+
+Copyright 2020 Laurent Minguet
