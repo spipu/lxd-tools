@@ -78,6 +78,7 @@ The available templates are listed below.
 * ubuntu-16_04-xenial
 * ubuntu-18_04-bionic
 * ubuntu-20_04-focal
+* ubuntu-22_04-jammy
 
 ### Centos
 
