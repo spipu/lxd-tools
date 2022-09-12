@@ -1,6 +1,7 @@
 #!/bin/bash
 
-LXD_TEMPLATE_IMAGE="centos/8"
+LXD_TEMPLATE_DEPRECATED=0
+LXD_TEMPLATE_IMAGE="centos/8-Stream"
 LXD_APACHE_GROUP="apache"
 
 packageUpgrade()

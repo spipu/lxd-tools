@@ -1,5 +1,6 @@
 #!/bin/bash
 
+LXD_TEMPLATE_DEPRECATED=0
 LXD_TEMPLATE_IMAGE="debian/bullseye"
 LXD_APACHE_GROUP="www-data"
 

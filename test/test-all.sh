@@ -14,10 +14,12 @@ FOLDERS=(
     "ubuntu16"
     "ubuntu18"
     "ubuntu20"
+    "ubuntu22"
     # Centos
     "centos6"
     "centos7"
     "centos8"
+    "centos9"
 )
 
 for FOLDER in "${FOLDERS[@]}"

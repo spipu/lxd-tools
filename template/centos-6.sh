@@ -1,5 +1,6 @@
 #!/bin/bash
 
+LXD_TEMPLATE_DEPRECATED=1
 LXD_TEMPLATE_IMAGE="centos/6"
 LXD_APACHE_GROUP="apache"
 

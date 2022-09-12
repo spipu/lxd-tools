@@ -22,6 +22,7 @@ if [[ ! "$LXD_IP" ]]; then
 fi
 showMessage "  - $LXD_IP"
 
+source $INCLUDE_DIR/remove/is-deprecated.sh
 source $INCLUDE_DIR/remove/clean-knowhosts.sh
 source $INCLUDE_DIR/remove/clean-etc-hosts.sh
 source $INCLUDE_DIR/remove/delete-container.sh

@@ -19,14 +19,17 @@ sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh /usr/local/bin/lxd-deploy
 sudo ln -fs $CURRENT_FOLDER/lxd-list.sh   /usr/local/bin/lxd-list
 sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh /usr/local/bin/lxd-remove
 
-showMessage " > Configure package"
+showMessage " > Search package"
 
-NEED_INSTALL=$(sudo dpkg -l lxd 2>/dev/null | grep lxd | wc -l  )
-if [ $NEED_INSTALL -eq 0 ]; then
+LXD_VERSION=$(lxd --version)
+LXD_MAIN_VERSION=$(echo "${LXD_VERSION}" | cut -d "." -f 1)
+if [[ -z "${LXD_VERSION}" ]]; then
     showError "   > LXD Package Not Installed - please look at the README.md file"
 else
-    showWarning "   > LXD Package Installed"
+    showWarning "   > LXD ${LXD_MAIN_VERSION} Package Installed"
 fi
+
+showMessage " > Configure uid"
 
 UID_LINE="lxd:$CURRENT_USER_UID:1"
 grep -q -F "$UID_LINE" /etc/subuid || echo "$UID_LINE" | sudo tee -a /etc/subuid > /dev/null
@@ -38,6 +41,10 @@ grep -q -F "$UID_LINE" /etc/subgid || echo "$UID_LINE" | sudo tee -a /etc/subgid
 
 showMessage " > Restart Service"
 
-sudo systemctl restart lxd 2>&1 > /dev/null
+if [[ "${LXD_MAIN_VERSION}" == "3" ]]; then
+    sudo systemctl restart lxd
+else
+    sudo systemctl restart snap.lxd.daemon
+fi
 
 showWarning "Finished"

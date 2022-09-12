@@ -20,6 +20,7 @@ source $TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh
 
 showWarning "Started"
 
+source $INCLUDE_DIR/deploy/is-deprecated.sh
 source $INCLUDE_DIR/deploy/create-container.sh
 source $INCLUDE_DIR/deploy/add-to-etc-hosts.sh
 source $INCLUDE_DIR/deploy/upgrade.sh

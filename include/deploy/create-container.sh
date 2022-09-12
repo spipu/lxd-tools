@@ -18,3 +18,10 @@ while [ ! "$LXD_IP" ] ; do
 done
 
 showMessage "  - $LXD_IP"
+
+showMessage " > Add info"
+
+sudo lxc exec $LXD_NAME -- sh -c "echo \"LXD info\"                     >  /root/lxd-info" > /dev/null
+sudo lxc exec $LXD_NAME -- sh -c "echo \"name=$LXD_NAME\"               >> /root/lxd-info" > /dev/null
+sudo lxc exec $LXD_NAME -- sh -c "echo \"template=$LXD_TEMPLATE_NAME\"  >> /root/lxd-info" > /dev/null
+sudo lxc exec $LXD_NAME -- sh -c "echo \"image=$LXD_TEMPLATE_IMAGE\"    >> /root/lxd-info" > /dev/null
