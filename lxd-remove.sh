@@ -22,6 +22,18 @@ if [[ ! "$LXD_IP" ]]; then
 fi
 showMessage "  - $LXD_IP"
 
+showMessage " > Search template name"
+LXD_TEMPLATE_NAME=$(ssh "root@$LXD_IP" "cat /root/lxd-info" | grep "template=" | cut -d "=" -f2)
+if [[ ! "$LXD_TEMPLATE_NAME" ]]; then
+    showWarning "  - file /root/lxd-info not found"
+else
+    showMessage "  - $LXD_TEMPLATE_NAME"
+    if [[ ! -f "$TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh" ]]; then
+        showError "This template name does not exists"
+    fi
+    source $TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh
+fi
+
 source $INCLUDE_DIR/remove/is-deprecated.sh
 source $INCLUDE_DIR/remove/clean-knowhosts.sh
 source $INCLUDE_DIR/remove/clean-etc-hosts.sh

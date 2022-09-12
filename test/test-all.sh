@@ -5,19 +5,19 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 FOLDERS=(
     # Debian
-    "debian8"
-    "debian9"
+#    "debian8"
+#    "debian9"
     "debian10"
     "debian11"
     # Ubuntu
-    "ubuntu14"
-    "ubuntu16"
+#    "ubuntu14"
+#    "ubuntu16"
     "ubuntu18"
     "ubuntu20"
     "ubuntu22"
     # Centos
-    "centos6"
-    "centos7"
+#    "centos6"
+#    "centos7"
     "centos8"
     "centos9"
 )
