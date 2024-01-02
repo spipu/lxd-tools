@@ -9,6 +9,7 @@ FOLDERS=(
 #    "debian9"
     "debian10"
     "debian11"
+    "debian12"
     # Ubuntu
 #    "ubuntu14"
 #    "ubuntu16"

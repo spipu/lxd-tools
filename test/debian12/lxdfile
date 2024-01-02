@@ -1,0 +1,6 @@
+name=debian12
+template=debian-12-bookworm
+host=debian12.lxc
+host=debian12.local
+delivery-user=delivery
+mount=.:/home/delivery/test
