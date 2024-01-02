@@ -95,6 +95,7 @@ The available templates are listed below.
 
 * debian-10-buster
 * debian-11-bullseye
+* debian-12-bookworm
 
 ### Ubuntu
 
