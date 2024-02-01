@@ -54,6 +54,25 @@ Would you like stale cached images to be updated automatically? (yes/no) [defaul
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: 
 ```
 
+## Remote
+
+You must have the following configured remotes:
+
+* ubuntu-minimal: https://cloud-images.ubuntu.com/minimal/releases/
+* debian: https://xxx
+
+You can see the remotes with:
+
+```bash
+lxd remote list
+```
+
+You can add the debian remote with:
+
+```bash
+lxc remote add debian https://xxx --protocol simplestreams
+```
+
 ## How To
 
 Clone this repo, and launch the init script:

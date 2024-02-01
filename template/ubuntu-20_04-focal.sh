@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=0
-LXD_TEMPLATE_IMAGE="ubuntu/focal"
+LXD_TEMPLATE_IMAGE="ubuntu-minimal:f"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=1
-LXD_TEMPLATE_IMAGE="centos/7"
+LXD_TEMPLATE_IMAGE="images:centos/7"
 LXD_APACHE_GROUP="apache"
 
 packageUpgrade()

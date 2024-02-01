@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=0
-LXD_TEMPLATE_IMAGE="debian/buster"
+LXD_TEMPLATE_IMAGE="images:debian/buster"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()

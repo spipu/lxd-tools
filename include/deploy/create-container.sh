@@ -1,7 +1,7 @@
 #!/bin/bash
 
-showMessage " > Create Container"
-sudo lxc init images:$LXD_TEMPLATE_IMAGE $LXD_NAME > /dev/null
+showMessage " > Create Container from [$LXD_TEMPLATE_IMAGE]"
+sudo lxc init $LXD_TEMPLATE_IMAGE $LXD_NAME
 
 showMessage " > Configure Container"
 

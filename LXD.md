@@ -38,3 +38,9 @@ lxc image export test
 
 lxc image import 0bf450c17cb7034077c83487e0.tar.gz
 lxc image list
+
+## Remote
+
+lxc remote list
+lxc remote remove images
+lxc remote add images https://images.linuxcontainers.org --protocol simplestreams

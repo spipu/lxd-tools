@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=1
-LXD_TEMPLATE_IMAGE="ubuntu/xenial"
+LXD_TEMPLATE_IMAGE="ubuntu:x"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()

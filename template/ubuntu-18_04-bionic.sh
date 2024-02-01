@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=0
-LXD_TEMPLATE_IMAGE="ubuntu/bionic"
+LXD_TEMPLATE_IMAGE="ubuntu-minimal:b"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()

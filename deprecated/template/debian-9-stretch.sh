@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LXD_TEMPLATE_DEPRECATED=1
-LXD_TEMPLATE_IMAGE="debian/stretch"
+LXD_TEMPLATE_IMAGE="images:debian/stretch"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()
