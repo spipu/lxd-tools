@@ -112,19 +112,17 @@ The available templates are listed below.
 
 ### Debian
 
-* debian-10-buster
-* debian-11-bullseye
 * debian-12-bookworm
+* debian-13-trixie
 
 ### Ubuntu
 
-* ubuntu-18_04-bionic
 * ubuntu-20_04-focal
 * ubuntu-22_04-jammy
+* ubuntu-24_04-noble
 
 ### Centos
 
-* centos-8
 * centos-9
 
 ## LXD native commands
@@ -139,4 +137,4 @@ For questions and bug reports, please use the GitHub issues page.
 
 This program is distributed under the MIT License. For more information see the [./LICENSE.md](./LICENSE.md) file.
 
-Copyright 2022 Laurent Minguet
+Copyright 2026 Laurent Minguet

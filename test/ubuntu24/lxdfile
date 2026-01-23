@@ -1,0 +1,6 @@
+name=ubuntu24
+template=ubuntu-24_04-noble
+host=ubuntu24.lxc
+host=ubuntu24.local
+delivery-user=delivery
+mount=.:/home/delivery/test

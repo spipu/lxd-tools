@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LXD_TEMPLATE_DEPRECATED=0
-LXD_TEMPLATE_IMAGE="images:debian/buster"
+LXD_TEMPLATE_DEPRECATED=1
+LXD_TEMPLATE_IMAGE="ubuntu-minimal:b"
 LXD_APACHE_GROUP="www-data"
 
 packageUpgrade()
@@ -37,4 +37,6 @@ serviceRestartSsh()
 containerCleanup()
 {
     sudo lxc exec $LXD_NAME -- apt-get -qq clean > /dev/null
+    sudo lxc exec $LXD_NAME -- userdel ubuntu
+    sudo lxc exec $LXD_NAME -- rm -rf /home/ubuntu
 }

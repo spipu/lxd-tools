@@ -1,0 +1,6 @@
+name=debian13
+template=debian-13-trixie
+host=debian13.lxc
+host=debian13.local
+delivery-user=delivery
+mount=.:/home/delivery/test
