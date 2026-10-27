@@ -7,7 +7,7 @@ source ./include/common/init-vars.sh
 
 showMessage "Install LXD tools"
 
-showWarning "Started"
+showWarning "Script - Install - Begin"
 
 showMessage " > Create Symlinks"
 
@@ -53,4 +53,4 @@ else
     sudo systemctl restart snap.lxd.daemon
 fi
 
-showWarning "Finished"
+showWarning "Script - Install - End"

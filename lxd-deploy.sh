@@ -18,7 +18,7 @@ if [ ! -f "$TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh" ]; then
 fi
 source $TEMPLATE_DIR/$LXD_TEMPLATE_NAME.sh
 
-showWarning "Started"
+showWarning "LXD - Deploy - Begin"
 
 source $INCLUDE_DIR/deploy/is-deprecated.sh
 source $INCLUDE_DIR/deploy/create-container.sh
@@ -30,4 +30,4 @@ source $INCLUDE_DIR/deploy/create-delivery-user.sh
 source $INCLUDE_DIR/deploy/mount.sh
 source $INCLUDE_DIR/deploy/test.sh
 
-showWarning "Finished"
+showWarning "LXD - Deploy - End"

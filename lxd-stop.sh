@@ -18,7 +18,7 @@ if [[ "$LXD_STATUS" != "RUNNING" ]]; then
     showError "The asked container is not running ($LXD_STATUS)"
 fi
 
-showWarning "Started"
+showWarning "LXD - Stop - Begin"
 
 LXD_IP=$(sudo lxc list "^$LXD_NAME\$" --format csv -c 4 | cut -d' ' -f1)
 
@@ -32,4 +32,4 @@ sudo lxc stop $LXD_NAME > /dev/null
 showMessage " > Container List"
 sudo lxc list -c ns4tS
 
-showWarning "Finished"
+showWarning "LXD - Stop - End"

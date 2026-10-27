@@ -13,7 +13,7 @@ if [ ! -d "$LXD_FOLDER" ]; then
     showError "The asked containter does not exist"
 fi
 
-showWarning "Started"
+showWarning "LXD - Remove - Begin"
 
 showMessage " > Status"
 LXD_STATUS=$(sudo lxc list "^$LXD_NAME\$" --format csv -c s)
@@ -55,4 +55,4 @@ source $INCLUDE_DIR/common/clean-etc-hosts-entries.sh
 source $INCLUDE_DIR/remove/delete-container.sh
 source $INCLUDE_DIR/remove/test.sh
 
-showWarning "Finished"
+showWarning "LXD - Remove - End"

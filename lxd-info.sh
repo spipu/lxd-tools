@@ -13,6 +13,8 @@ if [ ! -d "$LXD_FOLDER" ]; then
     showError "The asked container does not exist"
 fi
 
+showWarning "LXD - Info - Begin"
+
 showMessage " > Status"
 LXD_STATUS=$(sudo lxc list "^$LXD_NAME\$" --format csv -c s)
 showMessage "  - $LXD_STATUS"
@@ -21,3 +23,5 @@ source $INCLUDE_DIR/common/read-lxd-info.sh
 
 showMessage " > Content of /root/lxd-info"
 echo "$LXD_INFO"
+
+showWarning "LXD - Info - End"

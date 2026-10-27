@@ -18,7 +18,7 @@ if [[ "$LXD_STATUS" == "RUNNING" ]]; then
     showError "The asked container is already running"
 fi
 
-showWarning "Started"
+showWarning "LXD - Start - Begin"
 
 showMessage " > Start Container"
 sudo lxc start $LXD_NAME
@@ -48,4 +48,4 @@ source $INCLUDE_DIR/common/add-ip-to-knowhosts.sh
 showMessage " > Container List"
 sudo lxc list -c ns4tS
 
-showWarning "Finished"
+showWarning "LXD - Start - End"
