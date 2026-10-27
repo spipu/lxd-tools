@@ -17,6 +17,17 @@ ssh root@$HOST     "cat /etc/os-release"
 ssh root@$HOST     "whoami && pwd"
 ssh delivery@$HOST "whoami && pwd"
 
+echo "===[$FOLDER][Stop]=========================================="
+lxd-stop
+lxd-info
+
+echo "===[$FOLDER][Start]========================================="
+lxd-start
+lxd-info
+ssh root@$HOST     "cat /etc/os-release"
+ssh root@$HOST     "whoami && pwd"
+ssh delivery@$HOST "whoami && pwd"
+
 echo "===[$FOLDER][Remove]========================================"
 lxd-remove
 cd ..
