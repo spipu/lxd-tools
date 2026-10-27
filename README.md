@@ -85,6 +85,9 @@ Then you can:
 
   * create a lxd container with `lxd-deploy [name] [template-name]`
   * remove a lxd container with `lxd-remove [name]`
+  * start a lxd container with `lxd-start [name]` (updates the ip in `/etc/hosts` and `/root/lxd-info`)
+  * stop a lxd container with `lxd-stop [name]` (cleans `/etc/hosts`)
+  * show the info of a lxd container with `lxd-info [name]` (works even if the container is stopped)
   * list your lxd containers with `lxd-list`
 
 ## lxdfile
@@ -104,6 +107,9 @@ mount=/other/folder:/var/www/titi
 then you can:
 
   * create your lxd with `lxd-deploy`
+  * start your lxd with `lxd-start`
+  * stop your lxd with `lxd-stop`
+  * show the info of your lxd with `lxd-info`
   * remove your lxd with `lxd-remove`
 
 ## Templates

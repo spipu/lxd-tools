@@ -2,8 +2,8 @@
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-source ./include/messages.sh
-source ./include/init-vars.sh
+source ./include/common/messages.sh
+source ./include/common/init-vars.sh
 
 showMessage "Install LXD tools"
 
@@ -12,12 +12,18 @@ showWarning "Started"
 showMessage " > Create Symlinks"
 
 sudo chmod +x $CURRENT_FOLDER/lxd-deploy.sh
+sudo chmod +x $CURRENT_FOLDER/lxd-info.sh
 sudo chmod +x $CURRENT_FOLDER/lxd-list.sh
 sudo chmod +x $CURRENT_FOLDER/lxd-remove.sh
+sudo chmod +x $CURRENT_FOLDER/lxd-start.sh
+sudo chmod +x $CURRENT_FOLDER/lxd-stop.sh
 
 sudo ln -fs $CURRENT_FOLDER/lxd-deploy.sh /usr/local/bin/lxd-deploy
+sudo ln -fs $CURRENT_FOLDER/lxd-info.sh   /usr/local/bin/lxd-info
 sudo ln -fs $CURRENT_FOLDER/lxd-list.sh   /usr/local/bin/lxd-list
 sudo ln -fs $CURRENT_FOLDER/lxd-remove.sh /usr/local/bin/lxd-remove
+sudo ln -fs $CURRENT_FOLDER/lxd-start.sh  /usr/local/bin/lxd-start
+sudo ln -fs $CURRENT_FOLDER/lxd-stop.sh   /usr/local/bin/lxd-stop
 
 showMessage " > Search package"
 

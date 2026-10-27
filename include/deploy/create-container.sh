@@ -25,3 +25,7 @@ sudo lxc exec $LXD_NAME -- sh -c "echo \"LXD info\"                     >  /root
 sudo lxc exec $LXD_NAME -- sh -c "echo \"name=$LXD_NAME\"               >> /root/lxd-info" > /dev/null
 sudo lxc exec $LXD_NAME -- sh -c "echo \"template=$LXD_TEMPLATE_NAME\"  >> /root/lxd-info" > /dev/null
 sudo lxc exec $LXD_NAME -- sh -c "echo \"image=$LXD_TEMPLATE_IMAGE\"    >> /root/lxd-info" > /dev/null
+sudo lxc exec $LXD_NAME -- sh -c "echo \"ip=$LXD_IP\"                   >> /root/lxd-info" > /dev/null
+for LXD_HOST in ${LXD_HOSTS[@]}; do
+    sudo lxc exec $LXD_NAME -- sh -c "echo \"host=$LXD_HOST\"             >> /root/lxd-info" > /dev/null
+done

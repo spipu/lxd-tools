@@ -2,9 +2,9 @@
 
 # Do we have a lxd file or not ?
 if [ -f "$FILENAME_TEMPLATE" ]; then
-    source $INCLUDE_DIR/read-lxd-file.sh
+    source $INCLUDE_DIR/common/read-lxd-file.sh
 else
-    source $INCLUDE_DIR/read-user-entry.sh
+    source $INCLUDE_DIR/common/read-user-entry.sh
 fi
 
 # Validate the lxd name
