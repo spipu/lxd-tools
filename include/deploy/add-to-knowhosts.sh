@@ -1,10 +1,8 @@
 #!/bin/bash
 
-showMessage " > Add to KnowHost"
+source $INCLUDE_DIR/common/add-ip-to-knowhosts.sh
 
-if ! ssh-keygen -F "$LXD_IP" > /dev/null ; then
-    ssh-keyscan "$LXD_IP" 2> >(grep -v '^#' >&2) >> "$CURRENT_USER_HOME/.ssh/known_hosts"
-fi
+showMessage " > Add host to knowhosts file"
 
 LXD_HOST_MAIN="${LXD_HOSTS[0]}"
 

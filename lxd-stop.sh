@@ -20,8 +20,11 @@ fi
 
 showWarning "Started"
 
+LXD_IP=$(sudo lxc list "^$LXD_NAME\$" --format csv -c 4 | cut -d' ' -f1)
+
 source $INCLUDE_DIR/common/read-lxd-info.sh
 source $INCLUDE_DIR/common/clean-etc-hosts-entries.sh
+source $INCLUDE_DIR/common/clean-knowhosts-ip.sh
 
 showMessage " > Stop Container"
 sudo lxc stop $LXD_NAME > /dev/null
