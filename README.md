@@ -8,22 +8,13 @@
 
 It is compatible with :
 
-* Ubuntu **18.04** with LXD **3**
 * Ubuntu **20.04** with LXD **4**
 * Ubuntu **22.04** with LXD **5**
 * Ubuntu **24.04** with LXD **6**
  
 It has not been tested on other versions.
 
-The LXD package must have been installed :
-
-With apt (for old versions of Ubuntu): 
-
-```shell
-sudo apt-get install lxd
-```
-
-Or with snap (for new versions of Ubuntu):
+The LXD package must have been installed with snap:
 
 ```shell
 sudo snap install lxd

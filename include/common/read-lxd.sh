@@ -17,8 +17,6 @@ fi
 # LXD folder
 if [[ -d "/var/snap/lxd/common/lxd" ]]; then
     LXD_FOLDER="/var/snap/lxd/common/lxd/storage-pools/default/containers/${LXD_NAME}"
-elif [[ -d "/var/lib/lxd" ]]; then
-    LXD_FOLDER="/var/lib/lxd/storage-pools/default/containers/${LXD_NAME}"
 else
     showError "Unable to find LXD storage-pool folder."
 fi

@@ -47,10 +47,6 @@ grep -q -F "$UID_LINE" /etc/subgid || echo "$UID_LINE" | sudo tee -a /etc/subgid
 
 showMessage " > Restart Service"
 
-if [[ "${LXD_MAIN_VERSION}" == "3" ]]; then
-    sudo systemctl restart lxd
-else
-    sudo systemctl restart snap.lxd.daemon
-fi
+sudo systemctl restart snap.lxd.daemon
 
 showWarning "Script - Install - End"

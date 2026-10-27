@@ -8,8 +8,7 @@ showMessage " > Configure Container"
 sudo lxc config set $LXD_NAME raw.idmap "both $CURRENT_USER_UID $CURRENT_USER_UID"
 
 showMessage " > Start Container"
-sudo lxc start $LXD_NAME &
-sleep 1
+sudo lxc start $LXD_NAME
 
 source $INCLUDE_DIR/common/wait-ip.sh
 
