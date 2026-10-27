@@ -11,6 +11,7 @@ It is compatible with :
 * Ubuntu **18.04** with LXD **3**
 * Ubuntu **20.04** with LXD **4**
 * Ubuntu **22.04** with LXD **5**
+* Ubuntu **24.04** with LXD **6**
  
 It has not been tested on other versions.
 
@@ -56,21 +57,17 @@ Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
 
 ## Remote
 
-You must have the following configured remotes:
+The templates use the following remotes:
 
-* ubuntu-minimal: https://cloud-images.ubuntu.com/minimal/releases/
-* debian: https://xxx
+* `ubuntu-minimal`: https://cloud-images.ubuntu.com/minimal/releases/ (Ubuntu templates)
+* `images`: https://images.lxd.canonical.com (Debian and Centos templates)
+
+They are configured by default with the snap version of LXD.
 
 You can see the remotes with:
 
 ```bash
-lxd remote list
-```
-
-You can add the debian remote with:
-
-```bash
-lxc remote add debian https://xxx --protocol simplestreams
+lxc remote list
 ```
 
 ## How To
@@ -96,7 +93,7 @@ you can create a `lxdfile` to easily configure a lxd. Here is a example:
 
 ```
 name=test
-template=debian-10-buster
+template=debian-13-trixie
 host=test.lxd
 host=test.local
 delivery-user=delivery
@@ -111,6 +108,23 @@ then you can:
   * stop your lxd with `lxd-stop`
   * show the info of your lxd with `lxd-info`
   * remove your lxd with `lxd-remove`
+
+## lxd-info
+
+When a container is deployed, a file `/root/lxd-info` is created inside it:
+
+```
+LXD info
+name=test
+template=debian-13-trixie
+image=images:debian/trixie
+ip=10.x.x.x
+host=test.lxd
+host=test.local
+```
+
+It is used by `lxd-start`, `lxd-stop`, `lxd-info` and `lxd-remove`, even if the container is stopped.
+The `ip` line is updated by `lxd-start`.
 
 ## Templates
 
